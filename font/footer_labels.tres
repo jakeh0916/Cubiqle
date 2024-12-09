@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://m0p35ciornu"]
+
+[ext_resource type="FontFile" uid="uid://c3n7b1vaqov80" path="res://font/Suwannaphum-Light.ttf" id="1_h2ho7"]
+
+[resource]
+font = ExtResource("1_h2ho7")
+font_size = 36

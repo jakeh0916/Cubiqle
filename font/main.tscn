@@ -1,0 +1,220 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyqq07vg1y3m4"]
+
+[ext_resource type="Script" path="res://source/cubiqle_controller.gd" id="1_n8c7i"]
+[ext_resource type="LabelSettings" uid="uid://dcg265n6cio7e" path="res://font/title.tres" id="2_joh0r"]
+[ext_resource type="FontFile" uid="uid://c3n7b1vaqov80" path="res://font/Suwannaphum-Light.ttf" id="3_bhp1b"]
+[ext_resource type="FontFile" uid="uid://eabhe3dcei3t" path="res://font/Suwannaphum-Bold.ttf" id="4_3qaq0"]
+[ext_resource type="Texture2D" uid="uid://cedm7kor0ar28" path="res://texture/svg (2).svg" id="5_7nyur"]
+[ext_resource type="LabelSettings" uid="uid://di3g5xwcgn1mf" path="res://font/footer_counts.tres" id="5_mj5q3"]
+[ext_resource type="Texture2D" uid="uid://bd02k5fu1tvpn" path="res://texture/colorkit (3).svg" id="6_nxlob"]
+[ext_resource type="LabelSettings" uid="uid://m0p35ciornu" path="res://font/footer_labels.tres" id="6_ur04v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3r1r"]
+font = ExtResource("3_bhp1b")
+font_size = 36
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_2wfxo"]
+color = Color(0.539063, 0.539063, 0.539063, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yi43j"]
+bg_color = Color(0.12549, 0.14902, 0.152941, 0.929412)
+
+[node name="CubiqleController" type="Node2D"]
+script = ExtResource("1_n8c7i")
+
+[node name="UserHexGridOwner" type="Node2D" parent="."]
+
+[node name="KeyHexGridOwner" type="Node2D" parent="."]
+
+[node name="InterfaceLayer" type="CanvasLayer" parent="."]
+
+[node name="Header" type="HBoxContainer" parent="InterfaceLayer"]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -300.0
+offset_right = 300.0
+offset_bottom = 98.0
+grow_horizontal = 2
+
+[node name="Title" type="Label" parent="InterfaceLayer/Header"]
+layout_mode = 2
+text = "Cubiqle"
+label_settings = ExtResource("2_joh0r")
+
+[node name="Date" type="Label" parent="InterfaceLayer/Header"]
+custom_minimum_size = Vector2(0, 87)
+layout_mode = 2
+size_flags_vertical = 0
+text = " December 9, 2024"
+label_settings = SubResource("LabelSettings_c3r1r")
+vertical_alignment = 2
+
+[node name="Info" type="Button" parent="InterfaceLayer/Header"]
+custom_minimum_size = Vector2(54, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+focus_mode = 0
+theme_override_colors/font_hover_pressed_color = Color(0.407843, 0.564706, 0.454902, 1)
+theme_override_colors/font_hover_color = Color(0.407843, 0.564706, 0.454902, 1)
+theme_override_colors/font_pressed_color = Color(0.407843, 0.564706, 0.454902, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_3qaq0")
+theme_override_font_sizes/font_size = 50
+text = "i"
+flat = true
+
+[node name="HeaderSeparator" type="HSeparator" parent="InterfaceLayer"]
+anchors_preset = -1
+anchor_top = 0.0763889
+anchor_right = 1.0
+anchor_bottom = 0.104167
+grow_horizontal = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_2wfxo")
+metadata/_edit_use_anchors_ = true
+
+[node name="RotationButtons" type="HBoxContainer" parent="InterfaceLayer"]
+custom_minimum_size = Vector2(490, 0)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -243.0
+offset_top = -348.0
+offset_right = 247.0
+offset_bottom = -268.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RotateCCW" type="TextureButton" parent="InterfaceLayer/RotationButtons"]
+custom_minimum_size = Vector2(70, 80)
+layout_mode = 2
+texture_normal = ExtResource("5_7nyur")
+texture_pressed = ExtResource("6_nxlob")
+texture_hover = ExtResource("6_nxlob")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="RotateCW" type="TextureButton" parent="InterfaceLayer/RotationButtons"]
+custom_minimum_size = Vector2(70, 80)
+layout_mode = 2
+size_flags_horizontal = 10
+texture_normal = ExtResource("5_7nyur")
+texture_pressed = ExtResource("6_nxlob")
+texture_hover = ExtResource("6_nxlob")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="FooterSeparator" type="HSeparator" parent="InterfaceLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -363.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/separator = SubResource("StyleBoxLine_2wfxo")
+
+[node name="FooterCounts" type="HBoxContainer" parent="InterfaceLayer"]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -156.0
+offset_right = 300.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Move" type="Label" parent="InterfaceLayer/FooterCounts"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("5_mj5q3")
+
+[node name="Best" type="Label" parent="InterfaceLayer/FooterCounts"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "0
+"
+label_settings = ExtResource("5_mj5q3")
+
+[node name="FooterLabels" type="HBoxContainer" parent="InterfaceLayer"]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -256.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Move" type="Label" parent="InterfaceLayer/FooterLabels"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Move"
+label_settings = ExtResource("6_ur04v")
+
+[node name="Best" type="Label" parent="InterfaceLayer/FooterLabels"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+text = "Best"
+label_settings = ExtResource("6_ur04v")
+
+[node name="FooterKey" type="HBoxContainer" parent="InterfaceLayer"]
+custom_minimum_size = Vector2(600, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -180.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 2
+
+[node name="KeyPlaceholder" type="Control" parent="InterfaceLayer/FooterKey"]
+custom_minimum_size = Vector2(250, 120)
+layout_mode = 2
+
+[node name="InfoPopup" type="PanelContainer" parent="InterfaceLayer"]
+visible = false
+custom_minimum_size = Vector2(650, 1020)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1068.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_yi43j")
+
+[node name="InfoMargins" type="MarginContainer" parent="InterfaceLayer/InfoPopup"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="InfoText" type="RichTextLabel" parent="InterfaceLayer/InfoPopup/InfoMargins"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_bhp1b")
+theme_override_fonts/bold_font = ExtResource("4_3qaq0")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "Test 123 [b]Test[/b]"
+
+[connection signal="pressed" from="InterfaceLayer/Header/Info" to="." method="_on_info_pressed"]
+[connection signal="pressed" from="InterfaceLayer/RotationButtons/RotateCCW" to="." method="_on_rotate_ccw_pressed"]
+[connection signal="pressed" from="InterfaceLayer/RotationButtons/RotateCW" to="." method="_on_rotate_cw_pressed"]

@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://di3g5xwcgn1mf"]
+
+[ext_resource type="FontFile" uid="uid://eabhe3dcei3t" path="res://font/Suwannaphum-Bold.ttf" id="1_reyis"]
+
+[resource]
+font = ExtResource("1_reyis")
+font_size = 86
